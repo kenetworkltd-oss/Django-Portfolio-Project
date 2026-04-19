@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experience</title>
+    <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+ 
+</head>
+<body>
+    <nav>
+    <a href="/">Home</a> |
+    <a href="/about/">About</a> |
+    <a href="/contact/">Contact</a> |
+    <a href="/experience/">Experience</a> |
+    <a href="/blog/">Blog</a>
+</nav>
+
+  <h1>My Experience</h1>
+    {% for job in jobs %}
+        <div class="resume-item">
+        <h4>{{ job.job_title }}</h4>
+        <h5>{{ job.duration }}</h5>
+        <p><em>{{ job.company }}</em></p>
+        <ul>
+        <li>{{ job.description }}</li>
+        </ul>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

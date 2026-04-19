@@ -1,0 +1,50 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<main id="main">
+  <section class="profile-section" style="padding-top: 140px; padding-bottom: 60px; background-color: #f8f9fa;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm p-5" style="border-radius: 15px;">
+            <div class="text-center mb-4">
+              <div class="user-avatar mb-3" style="width: 100px; height: 100px; background: #008374; color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold;">
+                {{ user.username|slice:":1"|upper }}
+              </div>
+              <h2 style="color: #2c3e50;">User Dashboard</h2>
+              <p class="text-muted">Welcome back to the portfolio system.</p>
+            </div>
+
+            <hr>
+
+            <div class="profile-details mt-4">
+              <div class="row mb-3">
+                <div class="col-sm-4 font-weight-bold" style="color: #008374;">Username:</div>
+                <div class="col-sm-8">{{ user.username }}</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-4 font-weight-bold" style="color: #008374;">Email Address:</div>
+                <div class="col-sm-8">{{ user.email }}</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-4 font-weight-bold" style="color: #008374;">Account Status:</div>
+                <div class="col-sm-8">
+                  <span class="badge" style="background-color: #008374; color: white;">Active Member</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-4 font-weight-bold" style="color: #008374;">Member Since:</div>
+                <div class="col-sm-8">{{ user.date_joined|date:"F d, Y" }}</div>
+              </div>
+            </div>
+
+            <div class="mt-5 text-center">
+              <a href="{% url 'blog' %}" class="btn" style="background: #008374; color: white; padding: 10px 30px; border-radius: 50px;">Browse Blog Posts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

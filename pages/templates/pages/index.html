@@ -1,0 +1,913 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Impact Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href= "{% static 'pages/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'pages/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'pages/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'pages/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header fixed-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:kenetworkltd@gmail.com">kenetworkltd@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+234 810 557 1946</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename">Kenny</h1>
+          <span>.</span>
+        </a>
+
+
+   <nav id="navmenu" class="navmenu">
+    <ul>
+        <li><a href="{% url 'index' %}#hero">Home</a></li>
+        <li><a href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#services">Experience</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="{% url 'index' %}#contact">Contact</a></li>
+
+        {% if user.is_authenticated %}
+            <li class="dropdown">
+                <a href="#"><span>Hi, {{ user.username }}</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a class="btn-getstarted" href="{% url 'signup' %}" style="margin-left: 15px; background: #008374; color: white; padding: 8px 20px; border-radius: 4px;">Sign Up</a></li>
+        {% endif %}
+    </ul>
+  </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section accent-background">
+
+     <div class="container position-relative">
+        <div class="row gy-5 justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+
+            <h2><span>{{ hero.welcome_text }}</span></h2>
+              <p>{{ hero.description }}</p>
+          
+            {% comment %} <div class="d-flex">
+              <a href="#about" class="btn-get-started">Get Started</a>
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            </div> {% endcomment %}
+            
+        <div class="d-flex">
+          {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="btn-get-started">Go to My Dashboard</a>
+            <a href="{% url 'blog' %}" class="btn-watch-video d-flex align-items-center ms-4 text-decoration-none">
+              <i class="bi bi-person-badge"></i><span class="ms-2">Read My Blog</span>
+            </a>
+          {% else %}
+            <a href="{% url 'login' %}" class="btn-get-started">Get Started</a>
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center text-decoration-none">
+              <i class="bi bi-play-circle"></i><span class="ms-2">Watch Video</span>
+            </a>
+          {% endif %}
+        </div>
+
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="{% static 'pages/assets/img/hero-img.svg' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="container position-relative">
+          <div class="row gy-4 mt-5">
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-easel"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Lorem Ipsum</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-gem"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Sed ut perspiciatis</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Magni Dolores</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+            <div class="col-xl-3 col-md-6">
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-command"></i></div>
+                <h4 class="title"><a href="" class="stretched-link">Nemo Enim</a></h4>
+              </div>
+            </div><!--End Icon Box -->
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+<section id="about" class="about section">
+
+  <div class="container section-title" data-aos="fade-up">
+    {% if about %}
+      <h2>{{ about.title }}</h2>
+      <p>{{ about.description }}</p>
+    {% else %}
+      <h2>About Me</h2>
+      <p>Please add your info in the Admin panel!</p>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h3>My Professional Journey</h3>
+        
+        {% if about.image %}
+          <img src="{{ about.image.url }}" class="img-fluid rounded-4" alt="">
+        {% else %}
+          <img src="{% static 'pages/assets/img/about.jpg' %}" class="img-fluid rounded-4" alt="">
+        {% endif %}
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="content ps-0 ps-lg-5">
+          <p class="fst-italic">Key focus areas:</p>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Data Science & AI Solutions</span></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Data Engineering Pipeline Architecture.</span></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Machine Learning & Deep Learning.</span></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span> Web Development and AI Automation</span></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Technical Leadership & Team Building.</span></li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /About Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+      <div class="container">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-6.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-7.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'pages/assets/img/clients/client-8.png' %}" class="img-fluid" alt=""></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+```
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 align-items-center">
+
+          <div class="col-lg-5">
+            <img src="{% static 'pages/assets/img/stats-img.svg' %}" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="row gy-4">
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-emoji-smile flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-headset flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-people flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+        <img src="{% static 'pages/assets/img/cta-bg.jpg' %}" alt="">
+        <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn"></a>
+              <h3>Call To Action</h3>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <a class="cta-btn" href="#">Call To Action</a>
+            </div>
+          </div>
+        </div>
+      </div>F
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Services Section -->
+<section id="services" class="services section" >
+  <div class="container section-title" data-aos="fade-up">
+    <h2>My Experience</h2>
+    <p>Check out my professional journey below.</p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+      {% for exp in experiences %}
+        <div class="col-lg-6">
+          <div class="service-item position-relative" style="background: #f4f4f4; padding: 20px; border-radius: 10px;">
+            <i class="bi bi-briefcase" style="font-size: 2rem; color: #008374;"></i>
+            <h3>{{ exp.job_title }}</h3>
+            <p><strong>{{ exp.company }}</strong> | {{ exp.duration }}</p>
+            <p>{{ exp.description }}</p>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-center">Database is empty! Check Admin.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+   
+  
+  </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>See what my partners and mentors have to say about our collaborations.</p>
+      </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 10
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            {% for t in testimonials %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  {% for i in "12345"|make_list %}
+                    {% if forloop.counter <= t.stars %}
+                      <i class="bi bi-star-fill"></i>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>{{ t.quote }}</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <div class="profile mt-auto">
+                  {% if t.image %}
+                    <img src="{{ t.image.url }}" class="testimonial-img" alt="">
+                  {% else %}
+                    <img src="{% static 'pages/assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                  {% endif %}
+                  <h3>{{ t.name }}</h3>
+                  <h4>{{ t.role }}</h4>
+                </div>
+              </div>
+            </div>{% empty %}
+            <div class="swiper-slide text-center">
+                <p>Please add testimonials in the Admin panel to see them here!</p>
+            </div>
+            {% endfor %}
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- /Testimonials Section -->
+
+
+<!-- Portfolio Section -->
+
+<section id="portfolio" class="portfolio section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portfolio</h2>
+    <p>A showcase of my projects in Software Development, AI, and Data Science.</p>
+  </div>
+
+  <div class="container">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-app">Apps</li>
+        <li data-filter=".filter-product">AI & Data</li>
+        <li data-filter=".filter-branding">Websites</li>
+      </ul>
+
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+        {% for p in projects %}
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ p.category }}">
+          <div class="portfolio-content h-100">
+            <img src="{{ p.image.url }}" class="img-fluid" alt="{{ p.title }}">
+            <div class="portfolio-info">
+              <h4>{{ p.title }}</h4>
+              <p>{{ p.description|truncatewords:8 }}</p>
+              <a href="{{ p.image.url }}" data-gallery="portfolio-gallery-{{ p.category }}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              {% if p.link %}
+                <a href="{{ p.link }}" title="View Project" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+          <p>No projects yet. Head to the Admin to upload the UBA Clone!</p>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- /Portfolio Section -->
+
+<!-- Team Section -->
+<section id="team" class="team section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Team</h2>
+    <p>Meet our talented team members</p>
+  </div><div class="container">
+    <div class="row gy-4 justify-content-center">
+
+      {% for member in team %}
+      <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="member" style="padding: 30px; width: 100%;">
+          <img src="{{ member.image.url }}" class="img-fluid" alt="{{ member.name }}" style="border-radius: 15px;">
+          <h4 class="mt-3">{{ member.name }}</h4>
+          <span>{{ member.role }}</span>
+          <div class="social mt-3">
+            {% if member.twitter %}<a href="{{ member.twitter }}"><i class="bi bi-twitter-x"></i></a>{% endif %}
+            {% if member.linkedin %}<a href="{{ member.linkedin }}"><i class="bi bi-linkedin"></i></a>{% endif %}
+            {% if member.instagram %}<a href="{{ member.instagram }}"><i class="bi bi-instagram"></i></a>{% endif %}
+          </div>
+        </div>
+      </div>{% empty %}
+      <div class="col-12 text-center">
+        <p>Team members coming soon!</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</section>
+  <!-- /Team Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="zoom-in" data-aos-delay="100">
+
+        <div class="row g-4">
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Free Plan</h3>
+              <div class="icon">
+                <i class="bi bi-box"></i>
+              </div>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
+                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
+                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4">
+            <div class="pricing-item featured">
+              <h3>Business Plan</h3>
+              <div class="icon">
+                <i class="bi bi-rocket"></i>
+              </div>
+
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
+                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
+                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
+                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Developer Plan</h3>
+              <div class="icon">
+                <i class="bi bi-send"></i>
+              </div>
+              <h4><sup>$</sup>49<span> / month</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
+                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
+                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
+                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>Non consectetur a erat nam at lectus urna duis?</span></h3>
+                <div class="faq-content">
+                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span></h3>
+                <div class="faq-content">
+                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit pellentesque?</span></h3>
+                <div class="faq-content">
+                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</span></h3>
+                <div class="faq-content">
+                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span></h3>
+                <div class="faq-content">
+                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Faq Section -->
+
+
+    <!-- Recent Posts Section -->
+     <section id="recent-posts" class="recent-posts section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Recent Blog Posts</h2>
+    <p>Sharing my journey in Python, Data Science, and Crypto.</p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+
+      {% for post in page_obj %}
+    
+      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <article>
+          <div class="post-img">
+            {% if post.image %}
+              <img src="{{ post.image.url }}" alt="" class="img-fluid">
+            {% else %}
+              <img src="{% static 'pages/assets/img/blog/blog-1.jpg' %}" alt="" class="img-fluid">
+            {% endif %}
+          </div>
+
+          <p class="post-category">{{ post.category }}</p>
+
+          <h2 class="title">
+            <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a>
+          </h2>
+
+          <div class="d-flex align-items-center">
+            <div class="post-meta">
+              <p class="post-date">
+                <time datetime="{{ post.date }}">{{ post.date|date:"M d, Y" }}</time>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      {% empty %}
+      <div class="col-12 text-center">
+        <p>No blog posts yet. Add some in the Admin!</p>
+      </div>
+      {% endfor %}
+
+    </div> <div class="pagination-container mt-5 d-flex justify-content-center">
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+          {% endif %}
+
+          <li class="page-item disabled">
+            <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+          </li>
+
+          {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+
+  </div> </section>
+
+<!-- /Recent Posts Section -->
+
+<!-- Contact Section -->
+ <section id="contact" class="contact section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Have a project in mind? Reach out and let's build something amazing together.</p>
+  </div><div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gx-lg-0 gy-4">
+
+      <div class="col-lg-4">
+        <div class="info-container d-flex flex-column align-items-center justify-content-center">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>Address</h3>
+              <p>Ibadan, Oyo State, Nigeria</p>
+            </div>
+          </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Call Us</h3>
+              <p>+234 810 557 1946</p>
+            </div>
+          </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email Us</h3>
+              <p>kenetworkltd@gmail.com</p>
+            </div>
+          </div><div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <i class="bi bi-clock flex-shrink-0"></i>
+            <div>
+              <h3>Open Hours:</h3>
+              <p>Mon-Sat: 9AM - 6PM</p>
+            </div>
+          </div></div>
+      </div>
+
+      <div class="col-lg-8">
+        <form action="/#contact" method="post" id="django-contact-form" class="bg-white p-4 h-100 shadow-sm" style="border-radius: 0 10px 10px 0;">
+          {% csrf_token %}
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <button type="submit" style="background: #008374; color: white; padding: 12px 40px; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; margin-top: 10px;">
+                Send Message
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div></div></div>
+</section>
+
+ <!-- /Contact Section -->
+  {%block content%}
+  {%endblock%}
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Impact</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Impact</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+<!-- <div id="preloader"></div> -->
+
+   <!-- Vendor JS Files -->
+  <script src="{% static 'pages/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'pages/assets/js/main.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main">
+  <section id="login" class="login section-bg" style="min-height: 80vh;">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>Welcome Back</h2>
+        <p>Login to your account to continue.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm p-4 p-md-5">
+            <form method="POST">
+              {% csrf_token %}
+              
+              <div class="form-group mb-3">
+                <label for="id_username">Username</label>
+                <input type="text" name="username" autofocus maxlength="150" required id="id_username">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="id_password">Password</label>
+                <input type="password" name="password" required id="id_password">
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary w-100" style="background: #008374; border: none; padding: 12px; border-radius: 4px;">Login</button>
+              </div>
+            </form>
+
+            <div class="text-center mt-4">
+              <p class="mb-0">Don't have an account? <a href="{% url 'signup' %}" style="color: #008374; font-weight: 600;">Sign up here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+{% endblock %}

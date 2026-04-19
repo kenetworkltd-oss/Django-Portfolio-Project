@@ -1,0 +1,46 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<section class="section" style="padding-top: 120px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1>{{ post.title }}</h1>
+                <p class="text-muted">By {{ post.author|default:"Kenny" }} | {{ post.date|date:"M d, Y" }}</p>
+                <hr>
+                <div class="content mb-5">
+                    {{ post.content|linebreaks }}
+                </div>
+
+                <hr>
+                <h3>Comments ({{ comments.count }})</h3>
+                {% for comment in comments %}
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <strong>{{ comment.name }}</strong> 
+                            <small class="text-muted">- {{ comment.created_at|timesince }} ago</small>
+                            <p class="mt-2">{{ comment.body }}</p>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No comments yet. Be the first to join the journey!</p>
+                {% endfor %}
+
+                <div class="comment-form mt-5 p-4 bg-light rounded">
+                    <h4>Leave a Comment</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="body" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

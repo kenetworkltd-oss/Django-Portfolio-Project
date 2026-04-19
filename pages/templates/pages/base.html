@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kenny's Portfolio</title>
+  <link href="{% static 'pages/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/css/main.css' %}" rel="stylesheet">
+
+  <style>
+    /* Prevent the header from clipping the dropdown menu */
+    header#header {
+      overflow: visible !important;
+    }
+
+    input[type="text"], 
+    input[type="password"], 
+    input[type="email"] {
+      display: block;
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 1rem;
+      color: #495057;
+      background-color: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #008374;
+      margin-top: 10px;
+    }
+
+    .form-text {
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      color: #6c757d;
+    }
+
+    .user-name {
+      color: #008374;
+      font-weight: 700;
+    }
+
+    .btn-getstarted:hover {
+      background: #009a85 !important;
+      color: white !important;
+    }
+
+    /* Dropdown styling — works with Bootstrap JS */
+    .navmenu .dropdown .dropdown-menu {
+      z-index: 999999 !important;
+      border-radius: 8px !important;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2) !important;
+      min-width: 200px !important;
+      border: 1px solid #eee !important;
+      padding: 10px 0 !important;
+      background: #ffffff !important;
+    }
+
+    .navmenu .dropdown .dropdown-menu .dropdown-item {
+      color: #333 !important;
+      padding: 10px 20px !important;
+      font-size: 14px !important;
+    }
+
+    .navmenu .dropdown .dropdown-menu .dropdown-item:hover {
+      background: #f8f9fa !important;
+      color: #008374 !important;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <h1 class="sitename">Kenny</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'index' %}#hero">Home</a></li>
+          <li><a href="{% url 'index' %}#about">About</a></li>
+          <li><a href="{% url 'index' %}#services">Experience</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href="{% url 'index' %}#contact">Contact</a></li>
+
+          {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Hi, {{ user.username }} <i class="bi bi-chevron-down"></i></span>
+              </a>
+
+              {% comment %} <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Hi, <span class="user-name">{{ user.username }}</span></span>
+                <i class="bi bi-chevron-down"></i>
+              </a> {% endcomment %}
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">My Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li>
+              <a class="btn-getstarted" href="{% url 'signup' %}"
+                 style="margin-left: 15px; background: #008374; color: white; padding: 8px 20px; border-radius: 4px; text-decoration: none;">
+                Sign Up
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" style="padding-top: 100px;">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+            <span class="sitename">Kenny</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Ibadan, Nigeria</p>
+            <p>© All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'pages/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'pages/assets/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-03-24T01:44:01.305Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Why I chose Python",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-03-24T11:42:12.812Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Kenny Bio",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-04-10T10:55:54.447Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Data Scientist",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-04-10T11:16:13.701Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "NYSC Corps Member",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-04-11T11:23:15.190Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Kenny",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-04-11T17:51:26.129Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "About Me",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-04-11T18:57:23.325Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "About Me",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-04-12T00:20:51.586Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "NYSC Corps Member",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-04-12T00:22:31.104Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Intermediate Python Developer",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-04-12T00:24:15.803Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Crypto & Stock Trader",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-04-12T03:22:32.266Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Crypto & Stock Trader",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-04-12T03:22:45.056Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Intermediate Python Developer",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-04-12T03:22:54.455Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Intermediate Python Developer",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-04-12T03:23:17.211Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Data Scientist",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-04-12T03:24:46.932Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "NYSC Corps Member",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-04-12T04:09:14.853Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Building Automated Finance Tools with Python",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-04-12T04:18:56.728Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Why I chose Python",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Category\", \"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-04-12T11:23:42.413Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "Oyin - UK-based Collaborator",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-04-12T11:26:03.151Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Mr Iyanu - SQI Lead Instructor",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-04-12T11:28:49.112Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Eduland Principal - Eduland Principal & Owner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-04-12T12:17:26.532Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "Kehinde Agboola",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-04-12T12:18:55.927Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Oyin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-04-12T12:22:55.061Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "3",
+    "object_repr": "Sarah",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-04-12T12:24:19.567Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "About Me",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-04-12T13:00:41.590Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Sarah",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Category\", \"Image\", \"Content\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-04-12T13:02:45.965Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Meet Sarah",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Content\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-04-12T13:07:11.307Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Meet Sarah, your 24/7 AI Receptionist & Growth Partner",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Content\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-04-12T21:10:56.669Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "UBA Banking  Website Clone",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-04-12T21:12:58.923Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "FlyVark AI Website",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-04-12T21:24:47.568Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Budget-Pilot",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-04-12T21:34:45.413Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "4",
+    "object_repr": "Sarah: AI Voice Agent",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-04-12T21:51:39.637Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "4",
+    "object_repr": "Sarah: AI Voice Agent",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$r5Kl1OxaMdddNjaGDdyx6f$UQddgfuhVi+31142HI5qPR3j4TJy+1eR1KmSebQ/9v4=",
+    "last_login": "2026-04-10T10:49:41.810Z",
+    "is_superuser": true,
+    "username": "dell",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-24T01:33:31.453Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "28rhg21hywub9vk7ap1318z6fnqmbpia",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll2_Isp6XMGa3e9IQFkS3FSIe5OIqWAdmbee4sE2zqlrfGS5iyuQovLL0OgJ5dD5AeUe5VUy7rMKI9EnrbJoWZ-3c7272CCNu1rGBU4xcYSk7HsVA4xBj9yJOw7E7E36L1G6vPOre9A69i5kRFQBQji8wXvbzgP:1w4qk3:8SzGqLDzJXIRzQapPNGF8hgfuW5Tt4HvDcybd2G-_5c",
+    "expire_date": "2026-04-07T01:39:35.488Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yz1p3vykd9yfz9adb355y00wzjhwigkm",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGll2_Isp6XMGa3e9IQFkS3FSIe5OIqWAdmbee4sE2zqlrfGS5iyuQovLL0OgJ5dD5AeUe5VUy7rMKI9EnrbJoWZ-3c7272CCNu1rGBU4xcYSk7HsVA4xBj9yJOw7E7E36L1G6vPOre9A69i5kRFQBQji8wXvbzgP:1wB9Qj:zDaBdB34ir3bCNbcKaZMd_BsQAZIPMPKtpSsp-n_Hsg",
+    "expire_date": "2026-04-24T10:49:41.818Z"
+  }
+},
+{
+  "model": "pages.experience",
+  "pk": 1,
+  "fields": {
+    "job_title": "Data Scientist",
+    "company": "SQI ICT",
+    "duration": "2026 - Present",
+    "description": "A profesional Data Scientist at SQI ICT college,"
+  }
+},
+{
+  "model": "pages.experience",
+  "pk": 2,
+  "fields": {
+    "job_title": "NYSC Corps Member",
+    "company": "Eduland Montessori School",
+    "duration": "2026 - Present",
+    "description": "Teaching and administrative duties at Eduland Montessori School, ibadan."
+  }
+},
+{
+  "model": "pages.experience",
+  "pk": 4,
+  "fields": {
+    "job_title": "Intermediate Python Developer",
+    "company": "FlyVark AI",
+    "duration": "Jan 2026 - Present",
+    "description": "Building AI agents, chatbots, and web clones using Django."
+  }
+},
+{
+  "model": "pages.experience",
+  "pk": 5,
+  "fields": {
+    "job_title": "Crypto & Stock Trader",
+    "company": "Self-Employed",
+    "duration": "2021 - Present",
+    "description": "Trading Crypto coin like BTC , Altcoin and investing in the Nigerian Exchange."
+  }
+},
+{
+  "model": "pages.hero",
+  "pk": 1,
+  "fields": {
+    "name": "Kenny",
+    "welcome_text": "Welcome to Kenny Portfolio",
+    "description": "A data engineer  and scientist"
+  }
+},
+{
+  "model": "pages.about",
+  "pk": 1,
+  "fields": {
+    "title": "About Me",
+    "description": "I am an intermediate Python developer transitioning into the worlds of Data Science and Data Engineering . My journey began with mastering the fundamentals of Python—building everything from expense trackers to chatbots—and has evolved into a passion for architecting data solutions. Currently, I am expanding my expertise in web development and AI automation through my agency, FlyVark AI, while preparing for an MSc in Data Science. I thrive at the intersection of clean code and actionable data.",
+    "image": "about/Kenny.jpeg"
+  }
+},
+{
+  "model": "pages.post",
+  "pk": 1,
+  "fields": {
+    "title": "Why I chose Python",
+    "category": "Learning",
+    "date": "2026-03-23",
+    "image": "blog/code_snippet.jpeg",
+    "content": "To become a data scientist"
+  }
+},
+{
+  "model": "pages.post",
+  "pk": 2,
+  "fields": {
+    "title": "Meet Sarah, your 24/7 AI Receptionist & Growth Partner",
+    "category": "AI Agent",
+    "date": "2026-03-24",
+    "image": "blog/Gemini_Generated_Image_y5cgz5y5cgz5y5cg.png",
+    "content": "24/7 Availability\r\nNever misses a call, even at 3 AM\r\n\r\nInstant Appointment Setting\r\nBooks directly into your calendar\r\n\r\nIntelligent Lead Qualification\r\nScores and routes every lead\r\n\r\nSeamless Call Forwarding\r\nEscalates to humans when"
+  }
+},
+{
+  "model": "pages.post",
+  "pk": 3,
+  "fields": {
+    "title": "Building Automated Finance Tools with Python",
+    "category": "Python / Data Science",
+    "date": "2026-04-12",
+    "image": "blog/python_logo.jpg",
+    "content": "Managing finances in Nigeria can be complex with inflation and multiple income streams. That’s why I decided to build Budget-Pilot, a personal expense tracker.\r\n\r\nThe Process ;\r\n\r\nUsing Python and MySQL, I developed a system that:\r\n\r\nTracks every Naira spent in real-time.\r\n\r\nCategorizes expenses automatically.\r\n\r\nVisualizes monthly spending trends.\r\n\r\nThe Lesson ;\r\n\r\nThe biggest challenge wasn't the code; it was the data structure. Moving from a beginner to an intermediate Python developer meant learning how to handle database relations efficiently"
+  }
+},
+{
+  "model": "pages.contactmessage",
+  "pk": 1,
+  "fields": {
+    "name": "Kenny",
+    "email": "agboolakehinde167@gmail.com",
+    "subject": "Motivation",
+    "message": "What is your motivation behind this",
+    "created_at": "2026-04-12T05:06:38.923Z"
+  }
+},
+{
+  "model": "pages.contactmessage",
+  "pk": 2,
+  "fields": {
+    "name": "Kenny",
+    "email": "agboolakehinde167@gmail.com",
+    "subject": "Motivation",
+    "message": "What is your motivation ?",
+    "created_at": "2026-04-12T05:21:08.134Z"
+  }
+},
+{
+  "model": "pages.testimonial",
+  "pk": 1,
+  "fields": {
+    "name": "Oyin",
+    "role": "UK-based Collaborator",
+    "quote": "\"Ken’s dedication to mastering Python and Data Science is truly inspiring. His ability to build complex systems from scratch, like FlyVark AI, shows his potential as a world-class developer.\"",
+    "image": "testimonials/Avatar_Oyn.jpg",
+    "stars": 5
+  }
+},
+{
+  "model": "pages.testimonial",
+  "pk": 2,
+  "fields": {
+    "name": "Mr Iyanu",
+    "role": "SQI Lead Instructor",
+    "quote": "\"Kehinde is one of the most proactive students I've mentored. His transition from Python basics to building full-stack Django applications has been remarkably fast and efficient.\"",
+    "image": "testimonials/Mr_Iyanu.avif",
+    "stars": 4
+  }
+},
+{
+  "model": "pages.testimonial",
+  "pk": 3,
+  "fields": {
+    "name": "Eduland Principal",
+    "role": "Eduland Principal & Owner",
+    "quote": "\"As an NYSC Corps member, Ken brought a high level of technical organization to our administrative tasks. His work ethic and problem-solving skills are top-notch.\"",
+    "image": "testimonials/Eduland_Principal.avif",
+    "stars": 5
+  }
+},
+{
+  "model": "pages.teammember",
+  "pk": 1,
+  "fields": {
+    "name": "Kehinde Agboola",
+    "role": "Founder & Lead AI Engineer",
+    "image": "team/Kenny.jpeg",
+    "twitter": "https://x.com/agboken_logisti?s=21",
+    "linkedin": "https://linkedin.com/agboken_logisti?s=21",
+    "instagram": "https://instagram.com/agboken_logisti?s=21"
+  }
+},
+{
+  "model": "pages.teammember",
+  "pk": 2,
+  "fields": {
+    "name": "Oyin",
+    "role": "Operations & Strategy Lead",
+    "image": "team/Avatar_Oyn.jpg",
+    "twitter": "https://instagram.com/agboken_logisti?s=21",
+    "linkedin": "https://instagram.com/agboken_logisti?s=21",
+    "instagram": "https://instagram.com/agboken_logisti?s=21"
+  }
+},
+{
+  "model": "pages.teammember",
+  "pk": 3,
+  "fields": {
+    "name": "Sarah",
+    "role": "FlyVark AI agent",
+    "image": "team/sarah.png",
+    "twitter": "https://x.com/FlyVarkAI",
+    "linkedin": "https://x.com/FlyVarkAI",
+    "instagram": "https://x.com/FlyVarkAI"
+  }
+},
+{
+  "model": "pages.project",
+  "pk": 1,
+  "fields": {
+    "title": "UBA Banking  Website Clone",
+    "category": "branding",
+    "image": "portfolio/Debit.webp",
+    "link": "https://ubabanking.netlify.app",
+    "description": "Full-stack clone focusing on UI/UX , HTML and responsive CSS"
+  }
+},
+{
+  "model": "pages.project",
+  "pk": 2,
+  "fields": {
+    "title": "FlyVark AI Website",
+    "category": "app",
+    "image": "portfolio/logo.png",
+    "link": "https://flyvark.com",
+    "description": "Official landing page for the FlyVark AI Agency."
+  }
+},
+{
+  "model": "pages.project",
+  "pk": 3,
+  "fields": {
+    "title": "Budget-Pilot",
+    "category": "app",
+    "image": "portfolio/Budget-Pilot.jpg",
+    "link": "https://github.com/kenetworkltd-oss/Budget-Pilot",
+    "description": "Python & MySQL expense tracker with data visualization.\r\n\r\nBudget-Pilot is a Python-based financial engine designed to transform raw spending data into actionable visual insights, this project bridges the gap between basic scripting and data engineering by implementing a complete data lifecycle."
+  }
+},
+{
+  "model": "pages.project",
+  "pk": 4,
+  "fields": {
+    "title": "Sarah: AI Voice Agent",
+    "category": "product",
+    "image": "portfolio/Sarah_Avatar2.jpg",
+    "link": "https://flyvark.com/",
+    "description": "A sophisticated AI voice agent designed for high-conversion lead generation and automated customer support. Built with low-latency response architecture to mimic natural human conversation.\""
+  }
+}
+]
