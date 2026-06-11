@@ -133,7 +133,7 @@
         </div>
       </div>
 
-      <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
+      {% comment %} <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
         <div class="container position-relative">
           <div class="row gy-4 mt-5">
 
@@ -169,7 +169,7 @@
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </section><!-- /Hero Section --> {% endcomment %}
 
 <section id="about" class="about section">
 
@@ -334,7 +334,7 @@
 
       </div>
 
-    </section><!-- /Stats Section -->
+  </section><!-- /Stats Section -->
 
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
@@ -351,38 +351,40 @@
             </div>
           </div>
         </div>
-      </div>F
+      </div>
+    </section>
+  <!-- /Call To Action Section -->
 
-    </section><!-- /Call To Action Section -->
+  <!-- Services Section -->
+   <section id="services" class="services section" style="background-color: #008374; padding: 60px 0;">
 
-    <!-- Services Section -->
-<section id="services" class="services section" >
   <div class="container section-title" data-aos="fade-up">
-    <h2>My Experience</h2>
-    <p>Check out my professional journey below.</p>
+    <h2 style="color: white;">My Experience</h2>
+    <p style="color: #d1f2f0;">Check out my professional journey below.</p>
   </div>
 
   <div class="container">
     <div class="row gy-4">
+      
       {% for exp in experiences %}
         <div class="col-lg-6">
-          <div class="service-item position-relative" style="background: #f4f4f4; padding: 20px; border-radius: 10px;">
+          <div class="service-item position-relative shadow-sm" style="background: white; border: 1px solid #ebebeb; padding: 30px; border-radius: 10px; height: 100%;">
             <i class="bi bi-briefcase" style="font-size: 2rem; color: #008374;"></i>
-            <h3>{{ exp.job_title }}</h3>
-            <p><strong>{{ exp.company }}</strong> | {{ exp.duration }}</p>
-            <p>{{ exp.description }}</p>
+            <h3 style="color: #222;">{{ exp.job_title }}</h3>
+            <p style="color: #444;"><strong style="color: #008374;">{{ exp.company }}</strong> | {{ exp.duration }}</p>
+            <p style="color: #666;">{{ exp.description }}</p>
           </div>
+        </div> {% empty %}
+        <div class="col-12 text-center">
+          <p style="color: white;">Database is empty! Check Admin.</p>
         </div>
-      {% empty %}
-        <p class="text-center">Database is empty! Check Admin.</p>
       {% endfor %}
-    </div>
-  </div>
-</section>
-   
-  
-  </section><!-- /Services Section -->
 
+    </div> </div> </section>```
+
+<!-- /Services Section -->
+
+</div></div></section> <section id="testimonials" class="testimonials">
     <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials section">
       <div class="container section-title" data-aos="fade-up">
@@ -539,7 +541,7 @@
 </section>
   <!-- /Team Section -->
 
-    <!-- Pricing Section -->
+    {% comment %} <!-- Pricing Section -->
     <section id="pricing" class="pricing section">
 
       <!-- Section Title -->
@@ -611,7 +613,7 @@
 
       </div>
 
-    </section><!-- /Pricing Section -->
+    </section><!-- /Pricing Section --> {% endcomment %}
 
     <!-- Faq Section -->
     <section id="faq" class="faq section">

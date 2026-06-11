@@ -52,13 +52,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "portfolio.urls"
 
+import os
+from pathlib import Path
+
+# ... (rest of your settings)
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        # THIS IS THE FIX: Tell Django to look in your root templates folder
+        "DIRS": [BASE_DIR / 'templates'], 
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "django.template.context_processors.debug", # Added for better dev info
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
@@ -66,6 +73,21 @@ TEMPLATES = [
         },
     },
 ]
+
+    # TEMPLATES = [
+    #     {
+    #         "BACKEND": "django.template.backends.django.DjangoTemplates",
+    #         "DIRS": [],
+    #         "APP_DIRS": True,
+    #         "OPTIONS": {
+    #             "context_processors": [
+    #                 "django.template.context_processors.request",
+    #                 "django.contrib.auth.context_processors.auth",
+    #                 "django.contrib.messages.context_processors.messages",
+    #             ],
+    #         },
+    #     },
+    # # ]
 
 WSGI_APPLICATION = "portfolio.wsgi.application"
 
